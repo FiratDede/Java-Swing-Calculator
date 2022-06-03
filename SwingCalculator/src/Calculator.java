@@ -18,9 +18,8 @@ public class Calculator extends JFrame {
 	JPanel buttonsSection;
 	MyButton button0,button1,button2,button3,button4,button5,button6,button7,button8,button9;
 	MyButton buttonPlus,buttonMinus,buttonMultiplication,buttonDivision,buttonEqual,buttonC,buttonReset,buttonDot;
-	
-	
 	Calculator(){
+		// Initialize some application properties
 		this.applicationName="Calculator";
 		this.setTitle(this.applicationName);
 		this.mainResult=0.0;
@@ -101,6 +100,7 @@ public class Calculator extends JFrame {
 		
 		topSection.add(mainScreen,BorderLayout.NORTH);
 		
+		//Add Buttons to Button Section
 		buttonsSection.add(button0);
 		buttonsSection.add(button1);
 		buttonsSection.add(button2);
@@ -150,7 +150,6 @@ public class Calculator extends JFrame {
 	}
 	ActionListener createActionListenerForPlusButton() {
 		return new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(!mainScreen.getText().equals("")) {
@@ -164,8 +163,7 @@ public class Calculator extends JFrame {
 		
 	}
 	ActionListener createActionListenerForMinusButton() {
-		return new ActionListener() {
-			
+		return new ActionListener() {		
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(!mainScreen.getText().equals("")&&!mainScreen.getText().equals("-") ) {
@@ -184,7 +182,6 @@ public class Calculator extends JFrame {
 	}
 	ActionListener createActionListenerForMultiplicationButton() {
 		return new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(!mainScreen.getText().equals("")) {
@@ -192,14 +189,12 @@ public class Calculator extends JFrame {
 					mainScreen.setText("");
 					currentSign='*';
 				}
-				
 			}
 		};
 		
 	}
 	ActionListener createActionListenerForDivisionButton() {
 		return new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(!mainScreen.getText().equals("")) {
@@ -207,7 +202,6 @@ public class Calculator extends JFrame {
 					mainScreen.setText("");
 					currentSign='/';
 				}
-				
 			}
 		};
 		
@@ -233,10 +227,8 @@ public class Calculator extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(!mainScreen.getText().equals("")) {
-					mainScreen.setText(mainScreen.getText().substring(0, mainScreen.getText().length()-1));
-					
+					mainScreen.setText(mainScreen.getText().substring(0, mainScreen.getText().length()-1));	
 				}
-				
 			}
 		};
 	}
@@ -247,8 +239,6 @@ public class Calculator extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 					mainScreen.setText("0");
 					currentSign=' ';
-				
-				
 			}
 		};
 		
